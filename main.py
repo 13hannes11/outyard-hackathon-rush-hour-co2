@@ -7,9 +7,14 @@ from Car  import Car
 from Vacuum import Vacuum
 
 pygame.init()
+pygame.font.init()
+
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
+FONT = pygame.font.SysFont('Comic Sans MS', 128)
+TEXT_SCREEN = FONT.render('Game over!', False, (255, 255, 255))
+TEXT_RECT = TEXT_SCREEN.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
 
 BUBBLE_LIMIT = 100
 
@@ -40,6 +45,7 @@ while True:
             game_object.draw(SCREEN)
     else:
         # TODO game over screen with message to reduce driving cars
+        SCREEN.blit(TEXT_SCREEN, TEXT_RECT)
         pass
 
 
