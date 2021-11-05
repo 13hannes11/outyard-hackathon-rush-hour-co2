@@ -10,6 +10,9 @@ from Bicycle import Bicycle
 
 pygame.init()
 pygame.font.init()
+icon = pygame.image.load('sprites/bubble.png')
+pygame.display.set_icon(icon)
+
 
 TITLE_SCREEN = True
 
