@@ -7,11 +7,14 @@ from Car  import Car
 from Vacuum import Vacuum
 
 pygame.init()
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 
-BUBBLE_LIMIT = 1000
 
-SCREEN = pygame.display.set_mode((800,600))
-BACKGROUND = (255,255,255)
+BUBBLE_LIMIT = 100
+
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
+BACKGROUND = (0,0,0)
 SCREEN.fill(BACKGROUND)
 CLOCK = pygame.time.Clock()
 

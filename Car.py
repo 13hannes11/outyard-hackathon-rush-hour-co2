@@ -3,7 +3,7 @@ import random
 from Bubble import Bubble
 
 class Car:
-    def __init__(self, posX, posY, height, width, game_objects, color=(0,0,0), directionX=1):
+    def __init__(self, posX, posY, height, width, game_objects, color=(0, 255,0), directionX=1):
         self.posX = posX
         self.posY = posY
         self.color = color

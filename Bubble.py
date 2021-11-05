@@ -2,7 +2,7 @@ import pygame
 import random
 
 class Bubble:
-    def __init__(self, posX, posY, radius = 1, color=(0,0,0), direction=(1,1)):
+    def __init__(self, posX, posY, radius = 1, color=(0,0,255), direction=(1,1)):
         self.posX = posX
         self.posY = posY
         self.radius = radius
