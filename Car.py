@@ -26,5 +26,5 @@ class Car:
             bubble_y_direction = random.uniform(-1, 1)
             bubble_x_speeddiff = random.uniform(0, 0.9)
             bubble_radius = random.uniform(5, 10)
-            self.game_objects.append(Bubble(self.posX, self.posY, radius=bubble_radius, direction=(-self.directionX * bubble_x_speeddiff,bubble_y_direction)))
+            self.game_objects.append(Bubble(self.posX, self.posY + self.height - bubble_radius, radius=bubble_radius, direction=(-self.directionX * bubble_x_speeddiff,bubble_y_direction)))
             self.time_of_last_spawn = pygame.time.get_ticks()
