@@ -11,7 +11,7 @@ class Car:
         self.width = 173
         self.height = 66
         self.game_objects = game_objects
-        self.bubble_spawn_time_ms = 1000
+        self.bubble_spawn_time_ms = 300
         self.time_of_last_spawn = 0
         self.BUBBLE_IMAGE = pygame.image.load("sprites/bubble.png")
         self.image = pygame.image.load("sprites/car.png")
