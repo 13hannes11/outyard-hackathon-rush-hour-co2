@@ -17,6 +17,12 @@ FONT = pygame.font.SysFont('Comic Sans MS', 128)
 TEXT_SCREEN = FONT.render('Game over!', False, (255, 255, 255))
 TEXT_RECT = TEXT_SCREEN.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
 
+SUBTITLE_FONT_SIZE = 48
+SUBTITLE_FONT = pygame.font.SysFont('Comic Sans MS', SUBTITLE_FONT_SIZE)
+SUBTITLE_TEXT_SCREEN = SUBTITLE_FONT.render('You see, it\'s hard to clean up all this mess...', False, (255, 255, 255))
+SUBTITLE_TEXT_RECT = SUBTITLE_TEXT_SCREEN.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2 + 100))
+SUBTITLE_TEXT_SCREEN2 = SUBTITLE_FONT.render('Maybe use a bicycle instead of a car?', False, (255, 255, 255))
+SUBTITLE_TEXT_RECT2 = SUBTITLE_TEXT_SCREEN2.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2 + 100 + SUBTITLE_FONT_SIZE))
 
 BUBBLE_LIMIT = 100
 
@@ -60,8 +66,9 @@ while True:
             game_object.draw(SCREEN)
         vacuum.draw(SCREEN)
     else:
-        # TODO game over screen with message to reduce driving cars
         SCREEN.blit(TEXT_SCREEN, TEXT_RECT)
+        SCREEN.blit(SUBTITLE_TEXT_SCREEN, SUBTITLE_TEXT_RECT)
+        SCREEN.blit(SUBTITLE_TEXT_SCREEN2, SUBTITLE_TEXT_RECT2)
         
 
 
