@@ -11,6 +11,8 @@ from Bicycle import Bicycle
 pygame.init()
 pygame.font.init()
 
+TITLE_SCREEN = True
+
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
@@ -50,6 +52,22 @@ for i in range(3, 6):
 
 vacuum = Vacuum(bubble_objects)
 bicycle = Bicycle(0, SCREEN_HEIGHT - 40)
+
+
+TITLE_IMAGE = pygame.image.load("sprites/title_screen.png")
+
+while TITLE_SCREEN:
+    SCREEN.fill(BACKGROUND)
+    
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            TITLE_SCREEN = False
+    SCREEN.blit(TITLE_IMAGE, (0, 0))
+    pygame.display.flip()
+    CLOCK.tick(30)
 
 while True:
     SCREEN.fill(BACKGROUND)
