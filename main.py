@@ -6,6 +6,7 @@ from pygame.locals import *
 from Car  import Car
 from Vacuum import Vacuum
 from Lane import Lane
+from Bicycle import Bicycle
 
 pygame.init()
 pygame.font.init()
@@ -48,6 +49,7 @@ for i in range(3, 6):
     game_objects.append(Car(random.uniform(0, SCREEN_WIDTH), i * 80 + 60, bubble_objects, directionX= - random.uniform(1, 5)))
 
 vacuum = Vacuum(bubble_objects)
+bicycle = Bicycle(0, SCREEN_HEIGHT - 40)
 
 while True:
     SCREEN.fill(BACKGROUND)
@@ -69,6 +71,8 @@ while True:
         SCREEN.blit(TEXT_SCREEN, TEXT_RECT)
         SCREEN.blit(SUBTITLE_TEXT_SCREEN, SUBTITLE_TEXT_RECT)
         SCREEN.blit(SUBTITLE_TEXT_SCREEN2, SUBTITLE_TEXT_RECT2)
+        bicycle.update(SCREEN)
+        bicycle.draw(SCREEN)
         
 
 
