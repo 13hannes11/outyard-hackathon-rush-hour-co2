@@ -32,6 +32,7 @@ game_objects.append(Vacuum(bubble_objects))
 
 while True:
     SCREEN.fill(BACKGROUND)
+    pygame.display.set_caption("Rush Hour CO2")
 
     if len(bubble_objects) < BUBBLE_LIMIT:
         for game_object in bubble_objects:
