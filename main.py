@@ -16,6 +16,7 @@ FONT = pygame.font.SysFont('Comic Sans MS', 128)
 TEXT_SCREEN = FONT.render('Game over!', False, (255, 255, 255))
 TEXT_RECT = TEXT_SCREEN.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
 
+
 BUBBLE_LIMIT = 100
 
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
@@ -25,8 +26,10 @@ CLOCK = pygame.time.Clock()
 
 game_objects = []
 bubble_objects = []
-for i in range(10):
-    game_objects.append(Car(random.uniform(0, 200), i * 50, 30, 50, bubble_objects, directionX=random.uniform(1, 5)))
+for i in range(4):
+    game_objects.append(Car(random.uniform(0, SCREEN_WIDTH), i * 80 + 10, bubble_objects, directionX=random.uniform(1, 5)))
+for i in range(4, 7):
+    game_objects.append(Car(random.uniform(0, SCREEN_WIDTH), i * 80 + 10, bubble_objects, directionX= - random.uniform(1, 5)))
 
 game_objects.append(Vacuum(bubble_objects))
 
