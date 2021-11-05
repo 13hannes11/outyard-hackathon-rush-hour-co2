@@ -13,9 +13,11 @@ class Car:
         self.game_objects = game_objects
         self.bubble_spawn_time_ms = 1000
         self.time_of_last_spawn = 0
+        self.BUBBLE_IMAGE = pygame.image.load("sprites/bubble.png")
 
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, pygame.Rect(self.posX, self.posY, self.width, self.height))
+        
     
     def update(self, screen):
         self.posX += self.directionX
@@ -25,6 +27,9 @@ class Car:
         if self.bubble_spawn_time_ms + self.time_of_last_spawn < pygame.time.get_ticks():
             bubble_y_direction = random.uniform(-1, 1)
             bubble_x_speeddiff = random.uniform(0, 0.9)
-            bubble_radius = random.uniform(5, 10)
-            self.game_objects.append(Bubble(self.posX, self.posY + self.height - bubble_radius, radius=bubble_radius, direction=(-self.directionX * bubble_x_speeddiff,bubble_y_direction)))
+            bubble_radius = 16
+            self.game_objects.append(Bubble(self.posX, self.posY + self.height - bubble_radius, 
+                self.BUBBLE_IMAGE, 
+                radius=bubble_radius,
+                direction=(-self.directionX * bubble_x_speeddiff,bubble_y_direction)))
             self.time_of_last_spawn = pygame.time.get_ticks()

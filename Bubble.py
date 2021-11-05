@@ -2,16 +2,17 @@ import pygame
 import random
 
 class Bubble:
-    def __init__(self, posX, posY, radius = 1, color=(0,0,255), direction=(1,1)):
+    def __init__(self, posX, posY, image, radius = 1, color=(0,0,255), direction=(1,1)):
         self.posX = posX
         self.posY = posY
         self.radius = radius
         self.color = color
         self.directionX = direction[0]
         self.directionY = direction[1]
+        self.image = image
 
     def draw(self, screen):
-        pygame.draw.circle(screen, self.color, (self.posX, self.posY), self.radius)
+        screen.blit(self.image, (self.posX - self.radius, self.posY - self.radius))
     
     def update(self, screen):
 
