@@ -29,9 +29,11 @@ class Car:
         if self.directionX > 0:
             if self.posX > screen_width:
                 self.posX = -self.width
+                self.directionX = random.uniform(1, 5)
         else:
             if self.posX + self.width < 0:
                 self.posX = screen_width + self.width
+                self.directionX = -random.uniform(1, 5)
 
         
         if self.bubble_spawn_time_ms + self.time_of_last_spawn < pygame.time.get_ticks():
