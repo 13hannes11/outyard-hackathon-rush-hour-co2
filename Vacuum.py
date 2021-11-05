@@ -8,12 +8,18 @@ class Vacuum:
         self.posY = -50
         self.width = 124
         self.height = 57
+        self.tube_width = 10
         self.bubble_objects = bubble_objects
         self.image = pygame.image.load("sprites/vacuum.png")
 
     def draw(self, screen):
         screen.blit(self.image, (self.posX, self.posY))
-        
+        pygame.draw.line(screen, 
+            (255, 0,0 ),
+            (400,600),
+            (self.posX + (self.width - self.tube_width) / 2 , self.posY + self.height), 
+            width=self.tube_width)
+
     def update(self, screen):
         x, y = pygame.mouse.get_pos()
         self.posX = x -(self.width / 2)
