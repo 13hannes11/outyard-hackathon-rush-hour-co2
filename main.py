@@ -41,7 +41,7 @@ for i in range(3, 6):
     game_objects.append(Lane(i * 80 + 60, SCREEN_WIDTH, 80, add_markings=markings))
     game_objects.append(Car(random.uniform(0, SCREEN_WIDTH), i * 80 + 60, bubble_objects, directionX= - random.uniform(1, 5)))
 
-game_objects.append(Vacuum(bubble_objects))
+vacuum = Vacuum(bubble_objects)
 
 while True:
     SCREEN.fill(BACKGROUND)
@@ -50,17 +50,19 @@ while True:
     if len(bubble_objects) < BUBBLE_LIMIT:
         for game_object in game_objects:
             game_object.update(SCREEN)
-        for game_object in game_objects:
-            game_object.draw(SCREEN)
-        
         for game_object in bubble_objects:
             game_object.update(SCREEN)
+        vacuum.update(SCREEN)
+
+        for game_object in game_objects:
+            game_object.draw(SCREEN)
         for game_object in bubble_objects:
             game_object.draw(SCREEN)
+        vacuum.draw(SCREEN)
     else:
         # TODO game over screen with message to reduce driving cars
         SCREEN.blit(TEXT_SCREEN, TEXT_RECT)
-        pass
+        
 
 
     pygame.display.flip()
